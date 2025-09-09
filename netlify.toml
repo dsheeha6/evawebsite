@@ -55,6 +55,11 @@
   to = "/cookies.html"
   status = 200
 
+[[redirects]]
+  from = "/.well-known/security.txt"
+  to = "/.well-known/security.txt"
+  status = 200
+
 # Force HTTPS redirects
 [[redirects]]
   from = "http://evasheehan.com/*"
@@ -77,6 +82,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
 # Cache static assets
 [[headers]]

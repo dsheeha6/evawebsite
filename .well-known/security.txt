@@ -1,0 +1,10 @@
+Contact: mailto:security@evasheehan.com
+Expires: 2026-01-27T00:00:00.000Z
+Encryption: https://evasheehan.com/pgp-key.txt
+Preferred-Languages: en
+Canonical: https://evasheehan.com/.well-known/security.txt
+Policy: https://evasheehan.com/security-policy
+
+# Security Policy
+# If you discover a security vulnerability, please report it to security@evasheehan.com
+# We appreciate responsible disclosure and will work with you to resolve any issues.
