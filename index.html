@@ -35,286 +35,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Waterlily&display=swap" rel="stylesheet">
     
-    <!-- Critical CSS -->
+    <!-- Page-specific styles -->
     <style>
-        :root {
-            --canvas: #E7E1D6;
-            --ink: #163B60;
-            --design: #211FBF;
-            --glow: #FFD25C;
-            --bg: #E7E1D6;
-            --primary: #b5a304;
-            --cta: #a62b0c;
-            --line: #E7E1D6;
-            --bg-blue: #1730a3a1;
-            --shadow: 0 6px 20px rgba(0,0,0,.06);
-            --radius: 18px;
-            --maxw: 1280px;
-            --sp-xl: 8rem; --sp-lg: 6rem; --sp-md: 4rem; --sp-sm: 2rem;
-        }
-        
-        * { box-sizing: border-box; }
-        body { 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            background: var(--canvas); 
-            color: var(--ink);
-            line-height: 1.6;
-        }
-        .container { max-width: var(--maxw); margin: 0 auto; padding: 0 2rem; }
-        .btn { 
-            display: inline-flex; 
-            align-items: center; 
-            padding: 1rem 2rem; 
-            border-radius: var(--radius); 
-            text-decoration: none; 
-            font-weight: 500; 
-            transition: all 0.3s ease;
-        }
-        .btn-primary { 
-            background: var(--primary); 
-            color: white; 
-        }
-        .btn-ghost { 
-            border: 2px solid var(--primary); 
-            color: var(--primary); 
-        }
-        .btn:hover { transform: translateY(-2px); }
-        
-        /* Book Now Button Styling */
-        .btn-cta-book {
-            display: inline-block !important;
-            text-decoration: none !important;
-            transition: all 0.3s ease !important;
-            border: 2px solid var(--primary) !important;
-            border-radius: var(--radius) !important;
-            padding: 8px !important;
-            background: none !important;
-            gap: 0 !important;
-            color: transparent !important;
-            font-weight: normal !important;
-            letter-spacing: normal !important;
-            box-shadow: none !important;
-            transform: none !important;
-        }
-        
-        .book-now-button {
-            width: 100px;
-            height: 100px;
-            transition: all 0.3s ease;
-            display: block;
-            background: none !important;
-        }
-        
-        .btn-cta-book:hover {
-            transform: translateY(-3px) !important;
-            border-color: var(--ink) !important;
-            filter: none !important;
-        }
-        
-        .btn-cta-book:hover .book-now-button {
-            filter: brightness(1.15);
-        }
-        
-        /* Header Navigation Spacing - Override External CSS */
-        .nav {
-            display: flex !important;
-            align-items: center !important;
-            gap: 2rem !important;
-            justify-content: space-between !important;
-            padding: 1.5rem 0 !important;
-        }
-        
-        .logo {
-            display: flex !important;
-            align-items: center !important;
-            gap: 1rem !important;
-            text-decoration: none !important;
-            color: var(--ink) !important;
-            font-family: var(--font-serif) !important;
-            font-size: 1.5rem !important;
-            font-weight: 600 !important;
-            padding-right: 0.5rem !important;
-        }
-        
-        .nav-links {
-            display: flex !important;
-            align-items: center !important;
-            gap: 2.5rem !important;
-            margin: 0 0 0 1rem !important;
-            padding: 0 !important;
-            list-style: none !important;
-        }
-        
-        .nav-links a {
-            text-decoration: none !important;
-            color: var(--ink) !important;
-            font-weight: 500 !important;
-            transition: color 0.3s ease !important;
-            position: relative !important;
-        }
-        
-        .nav-links a:hover {
-            color: var(--design) !important;
-        }
-        
-        /* Ensure button is prominent in header */
-        .nav .btn-cta-book {
-            margin-left: 2rem !important;
-            position: relative !important;
-            z-index: 10 !important;
-        }
-        
-        /* Mobile adjustments for Book Now button */
-        @media (max-width: 768px) {
-            .nav { gap: 1rem !important; }
-            .nav .btn-cta-book { margin-left: auto !important; }
-            .book-now-button { width: 72px !important; height: 72px !important; }
-            .mobile-nav-toggle { margin-left: .5rem !important; }
-        }
-        
-        @media (max-width: 480px) {
-            .book-now-button { width: 64px !important; height: 64px !important; }
-        }
-        
-        /* Responsive Layout - Ensure Content is Centered */
-        .container {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: 0 2rem;
-            width: 100%;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        /* Services Section Responsive */
-        .section-services {
-            padding: 4rem 2rem;
-        }
-        
-        .section-services .wrap {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        /* Unstyled link wrapper for clickable blocks */
-        .section-services a.link-unstyled { text-decoration: none; color: inherit; display: block; }
-        .section-services a.link-unstyled:focus { outline: 2px solid var(--design); outline-offset: 4px; border-radius: var(--radius); }
-        /* Ensure the services calling card is perfectly centered */
-        .section-services .service-card--summary { margin: 0 auto !important; }
-        .section-services .service-card-content { margin-left: auto; margin-right: auto; }
         /* Services summary single calling card */
-        .service-card--summary { width: 100%; max-width: 1100px; margin-left: auto; margin-right: auto; background-color: rgba(23, 48, 163, 0.2) !important; }
-        .services-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
-        @media (max-width: 1024px) { .services-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-        @media (max-width: 640px) { .services-summary-grid { grid-template-columns: 1fr; } }
-        .service-summary { display: flex; gap: .75rem; align-items: flex-start; }
-        .service-summary .service-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; }
-        .service-summary .service-icon img { width: 32px; height: 32px; }
-        .service-summary h4 { margin: 0 0 .25rem 0; font-size: 1.1rem; color: var(--ink); }
-        .service-summary p { margin: 0; font-size: .95rem; opacity: .9; line-height: 1.5; }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero {
-                padding: 3rem 1rem;
-            }
-            
-            .section-services {
-                padding: 3rem 1rem;
-            }
+        .service-card--summary { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            background-color: rgba(23, 48, 163, 0.2) !important; 
         }
-        
-        /* Services Title - Now using external services.css */
-        
-        .header { 
-            position: sticky; 
-            top: 0; 
-            background: rgba(231,225,214,0.95); 
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--line);
-            z-index: 100;
+        .services-summary-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, minmax(0, 1fr)); 
+            gap: 1.25rem; 
         }
-        .hero { 
-            padding: var(--sp-lg) 0; 
-            text-align: center;
+        @media (max-width: 1024px) { 
+            .services-summary-grid { 
+                grid-template-columns: repeat(2, minmax(0, 1fr)); 
+            } 
         }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        @media (max-width: 640px) { 
+            .services-summary-grid { 
+                grid-template-columns: 1fr; 
+            } 
         }
-        h1 { 
-            font-family: 'Fraunces', serif; 
-            font-size: clamp(2.5rem, 7vw, 5rem); 
-            line-height: 1.2; 
-            margin: 0 0 1.5rem 0;
-            color: var(--ink);
+        .service-summary { 
+            display: flex; 
+            gap: .75rem; 
+            align-items: flex-start; 
         }
-
-        
-        @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
+        .service-summary .service-icon { 
+            width: 56px; 
+            height: 56px; 
+            border-radius: 50%; 
+            background: rgba(255,255,255,0.9); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
-        
-        /* Social Media Icons */
-        .footer-social {
-            margin-top: 2rem;
+        .service-summary .service-icon img { 
+            width: 32px; 
+            height: 32px; 
         }
-        
-        .footer-social h4 {
-            color: var(--ink);
-            font-family: 'Fraunces', serif;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+        .service-summary h4 { 
+            margin: 0 0 .25rem 0; 
+            font-size: 1.1rem; 
+            color: var(--ink); 
         }
-        
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--ink);
-            color: var(--canvas);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .social-icons a:hover {
-            background: var(--design);
-            transform: translateY(-2px);
-        }
-        
-        .social-icons svg {
-            width: 20px;
-            height: 20px;
+        .service-summary p { 
+            margin: 0; 
+            font-size: .95rem; 
+            opacity: .9; 
+            line-height: 1.5; 
         }
         
         /* Testimonials Carousel Styling */
@@ -375,22 +147,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .testimonial-slide blockquote {
-            font-size: 1.2rem !important;
-            line-height: 1.6 !important;
-            color: var(--primary) !important;
-            margin: 0 0 2rem 0 !important;
-            font-style: italic !important;
-            position: relative !important;
-            -webkit-text-stroke: 0.35px var(--ink) !important;
-            text-shadow:
-                -0.5px 0 0 var(--ink),
-                 0.5px 0 0 var(--ink),
-                 0 -0.5px 0 var(--ink),
-                 0 0.5px 0 var(--ink) !important;
-        }
-
-        /* JS-rendered testimonial card styles */
+        .testimonial-slide blockquote,
         .testimonial-card blockquote {
             font-size: 1.2rem !important;
             line-height: 1.6 !important;
@@ -406,16 +163,7 @@
                  0 0.5px 0 var(--ink) !important;
         }
         
-        .testimonial-slide blockquote::before {
-            content: '"' !important;
-            font-size: 4rem !important;
-            color: var(--primary) !important;
-            position: absolute !important;
-            top: -20px !important;
-            left: -20px !important;
-            font-family: 'Fraunces', serif !important;
-        }
-
+        .testimonial-slide blockquote::before,
         .testimonial-card blockquote::before {
             content: '"' !important;
             font-size: 4rem !important;

@@ -94,6 +94,42 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 0;
+  gap: 2rem;
+}
+
+/* Book Now Button Styling */
+.btn-cta-book {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 8px;
+  background: none !important;
+}
+
+.book-now-button {
+  width: 100px;
+  height: 100px;
+  transition: all 0.3s ease;
+  display: block;
+  background: none !important;
+}
+
+.btn-cta-book:hover {
+  transform: translateY(-3px);
+  border-color: var(--ink);
+}
+
+.btn-cta-book:hover .book-now-button {
+  filter: brightness(1.15);
+}
+
+/* Ensure button is prominent in header */
+.nav .btn-cta-book {
+  margin-left: 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
@@ -167,14 +203,10 @@ section {
   width: 100%;
 }
 
-/* colors from your palette */
-:root{
-  --color-cta:#a62b0c;   /* red */
-  --cta-focus: #c73d1a;  /* lighter for focus ring */
-}
-
 /* Additional color utilities for the new scheme */
 :root {
+  --color-cta: #a62b0c;      /* red */
+  --cta-focus: #c73d1a;      /* lighter for focus ring */
   --primary-light: #d4b815;  /* lighter yellow for hover states */
   --primary-dark: #8f7a03;   /* darker yellow for active states */
   --cta-light: #c73d1a;      /* lighter red for hover states */
@@ -366,14 +398,6 @@ section {
   background-color: rgba(23, 48, 163, 0.25);
 }
 
-.bg-design--services {
-  background-image: url('../services.png');
-  background-size: 600px;
-  background-repeat: repeat;
-  background-position: center;
-  background-color: rgba(23, 48, 163, 0.2);
-  background-blend-mode: overlay;
-}
 
 /* Services */
 .services-preview {
