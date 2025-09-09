@@ -1,0 +1,401 @@
+/* Services Page Styles */
+
+/* Services Hero Section */
+.services-hero {
+  padding: var(--sp-xl) 0 var(--sp-lg) 0;
+  background: var(--canvas);
+  text-align: center;
+  position: relative;
+}
+
+.services-hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--cta);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.services-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--ink);
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Services Cards Section */
+.services-cards-section {
+  padding: var(--sp-lg) 0;
+  background: var(--canvas);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-cards-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Service Card Base Styles */
+.service-card {
+  position: relative;
+  background: var(--canvas);
+  border-radius: 24px;
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: visible;
+  border: 2px solid transparent;
+  will-change: transform;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-content {
+  padding: 3rem 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.service-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.service-card h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--ink);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  color: var(--ink);
+  opacity: 0.8;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.service-features li::before {
+  content: '•';
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+/* Full Scalloped Border */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 32px;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    /* Top scallops */
+    radial-gradient(circle at 12px -6px, var(--primary) 11px, transparent 12px) top/24px 24px repeat-x,
+    /* Bottom scallops */
+    radial-gradient(circle at 12px calc(100% + 6px), var(--primary) 11px, transparent 12px) bottom/24px 24px repeat-x,
+    /* Left scallops */
+    radial-gradient(circle at -6px 12px, var(--primary) 11px, transparent 12px) left/24px 24px repeat-y,
+    /* Right scallops */
+    radial-gradient(circle at calc(100% + 6px) 12px, var(--primary) 11px, transparent 12px) right/24px 24px repeat-y;
+}
+
+/* Individual Card Colors and Asymmetric Positioning */
+.service-card--1 {
+  background: linear-gradient(135deg, rgba(181, 163, 4, 0.1) 0%, rgba(181, 163, 4, 0.05) 100%);
+  border-color: rgba(181, 163, 4, 0.2);
+  margin-left: 0;
+  margin-right: 8%;
+}
+
+.service-card--2 {
+  background: linear-gradient(135deg, rgba(166, 43, 12, 0.1) 0%, rgba(166, 43, 12, 0.05) 100%);
+  border-color: rgba(166, 43, 12, 0.2);
+  margin-left: 12%;
+  margin-right: 0;
+}
+
+.service-card--3 {
+  background: linear-gradient(135deg, rgba(22, 59, 96, 0.1) 0%, rgba(22, 59, 96, 0.05) 100%);
+  border-color: rgba(22, 59, 96, 0.2);
+  margin-left: 0;
+  margin-right: 15%;
+}
+
+.service-card--4 {
+  background: linear-gradient(135deg, rgba(181, 163, 4, 0.08) 0%, rgba(181, 163, 4, 0.03) 100%);
+  border-color: rgba(181, 163, 4, 0.15);
+  margin-left: 10%;
+  margin-right: 0;
+}
+
+.service-card--5 {
+  background: linear-gradient(135deg, rgba(166, 43, 12, 0.08) 0%, rgba(166, 43, 12, 0.03) 100%);
+  border-color: rgba(166, 43, 12, 0.15);
+  margin-left: 0;
+  margin-right: 6%;
+}
+
+.service-card--6 {
+  background: linear-gradient(135deg, rgba(22, 59, 96, 0.08) 0%, rgba(22, 59, 96, 0.03) 100%);
+  border-color: rgba(22, 59, 96, 0.15);
+  margin-left: 18%;
+  margin-right: 0;
+}
+
+/* Services CTA Section */
+.services-cta {
+  padding: var(--sp-lg) 0;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.services-cta-content h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.services-cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .services-cards-container {
+    padding: 0 1.5rem;
+  }
+  
+  .service-card--1 { margin-right: 6%; }
+  .service-card--2 { margin-left: 8%; }
+  .service-card--3 { margin-right: 10%; }
+  .service-card--4 { margin-left: 6%; }
+  .service-card--5 { margin-right: 4%; }
+  .service-card--6 { margin-left: 12%; }
+}
+
+@media (max-width: 1024px) {
+  .services-cards-container {
+    padding: 0 1rem;
+    gap: 2.5rem;
+  }
+  
+  .service-card-content {
+    padding: 2.5rem 2rem;
+  }
+  
+  .service-card--1 { margin-right: 4%; }
+  .service-card--2 { margin-left: 6%; }
+  .service-card--3 { margin-right: 8%; }
+  .service-card--4 { margin-left: 4%; }
+  .service-card--5 { margin-right: 2%; }
+  .service-card--6 { margin-left: 8%; }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding: var(--sp-lg) 0 var(--sp-md) 0;
+  }
+  
+  .services-cards-section {
+    padding: var(--sp-md) 0;
+  }
+  
+  .services-cards-container {
+    gap: 2rem;
+  }
+  
+  .service-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 20px;
+  }
+  
+  .service-card-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .service-icon img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-features li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-cards-container {
+    padding: 0 0.75rem;
+    gap: 1.5rem;
+  }
+  
+  .service-card-content {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .service-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .service-card p {
+    font-size: 0.95rem;
+  }
+  
+  .service-features li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Optimized Animation for card entrance */
+.service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardEntrance 0.4s ease-out forwards;
+}
+
+.service-card--1 { animation-delay: 0.05s; }
+.service-card--2 { animation-delay: 0.1s; }
+.service-card--3 { animation-delay: 0.15s; }
+.service-card--4 { animation-delay: 0.2s; }
+.service-card--5 { animation-delay: 0.25s; }
+.service-card--6 { animation-delay: 0.3s; }
+
+@keyframes cardEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optimized Hover effects */
+.service-card:hover .service-icon {
+  transform: scale(1.05);
+}
+
+.service-card:hover h3 {
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+.service-features li {
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.service-features li:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+/* Focus states for accessibility */
+.service-card:focus-within {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* Performance optimizations */
+.service-card {
+  contain: layout style paint;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .service-card:hover {
+    transform: none;
+  }
+  
+  .service-card:hover .service-icon {
+    transform: none;
+  }
+  
+  .service-features li:hover {
+    transform: none;
+  }
+}
+
+/* Hardware acceleration for better performance */
+.service-card,
+.service-icon,
+.service-features li {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}

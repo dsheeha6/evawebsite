@@ -1,0 +1,17 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hand-drawn book with slightly wobbly lines -->
+  <path d="M4 4C4 3.44772 4.44772 3 5 3H19C19.5523 3 20 3.44772 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4Z" 
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Book spine with hand-drawn texture -->
+  <path d="M7 3V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  
+  <!-- Pages with wobbly lines -->
+  <path d="M8 6H16" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+  <path d="M8 9H14" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+  <path d="M8 12H16" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+  <path d="M8 15H13" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Bookmark ribbon -->
+  <path d="M18 8L20 6L18 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

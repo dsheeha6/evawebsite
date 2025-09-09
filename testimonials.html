@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Client Feedback - Eva Sheehan</title>
+    <meta name="description" content="Read what clients say about working with Eva Sheehan. Real feedback from editorial design, brand strategy, and creative direction projects.">
+    <meta name="author" content="Eva Sheehan">
+    <meta name="keywords" content="testimonials, client feedback, reviews, editorial design, brand strategy, creative direction">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Testimonials - Client Feedback - Eva Sheehan">
+    <meta property="og:description" content="Read what clients say about working with Eva Sheehan. Real feedback from editorial design, brand strategy, and creative direction projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evasheehan.com/testimonials">
+    <meta property="og:image" content="assets/og.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Testimonials - Client Feedback - Eva Sheehan">
+    <meta name="twitter:description" content="Read what clients say about working with Eva Sheehan. Real feedback from editorial design, brand strategy, and creative direction projects.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://evasheehan.com/testimonials">
+    
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/services.css">
+    
+    <!-- Book Now Button Styling -->
+    <style>
+        /* Book Now Button Styling */
+        .btn-cta-book {
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 8px;
+            background: none !important;
+        }
+        
+        .book-now-button {
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s ease;
+            display: block;
+            background: none !important;
+        }
+        
+        .btn-cta-book:hover {
+            transform: translateY(-3px);
+            border-color: var(--ink);
+        }
+        
+        .btn-cta-book:hover .book-now-button {
+            filter: brightness(1.15);
+        }
+        
+        /* Header Navigation Spacing - Override External CSS */
+        .nav {
+            display: flex !important;
+            align-items: center !important;
+            gap: 2rem !important;
+            justify-content: space-between !important;
+            padding: 1.5rem 0 !important;
+        }
+        
+        .logo {
+            display: flex !important;
+            align-items: center !important;
+            gap: 1rem !important;
+            text-decoration: none !important;
+            color: var(--ink) !important;
+            font-family: var(--font-serif) !important;
+            font-size: 1.5rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .nav-links {
+            display: flex !important;
+            align-items: center !important;
+            gap: 2rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+        
+        .nav-links a {
+            text-decoration: none !important;
+            color: var(--ink) !important;
+            font-weight: 500 !important;
+            transition: color 0.3s ease !important;
+            position: relative !important;
+        }
+        
+        .nav-links a:hover {
+            color: var(--design) !important;
+        }
+        
+        /* Ensure button is prominent in header */
+        .nav .btn-cta-book {
+            margin-left: 2rem !important;
+            position: relative !important;
+            z-index: 10 !important;
+        }
+        
+        /* Responsive Layout - Ensure Content is Centered */
+        .container {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Testimonials Section Responsive */
+        .testimonials-section {
+            padding: 4rem 2rem;
+            max-width: var(--maxw);
+            margin: 0 auto;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .testimonials-section {
+                padding: 3rem 1rem;
+            }
+        }
+        
+        /* Wall of Love */
+        .wall-of-love {
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        .love-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            align-items: start;
+        }
+        .love-card {
+            position: relative;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+            box-shadow: 0 8px 18px rgba(0,0,0,.06);
+            transition: transform .2s ease, box-shadow .2s ease;
+            overflow: hidden;
+        }
+        .love-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(0,0,0,.10);
+        }
+        .love-card__quote {
+            position: relative;
+            color: var(--ink);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+        .love-card__quote::before {
+            content: '“';
+            position: absolute;
+            left: -8px;
+            top: -10px;
+            font-size: 2.5rem;
+            line-height: 1;
+            color: rgba(181, 163, 4, 0.35);
+            font-family: var(--font-serif);
+        }
+        .love-card__footer {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-top: .5rem;
+        }
+        .love-card__avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(23, 48, 163, 0.1);
+            color: #163b60;
+            font-weight: 700;
+            font-size: .9rem;
+            border: 1px solid rgba(23, 48, 163, 0.15);
+        }
+        .love-card__meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .love-card__author { font-weight: 600; color: var(--primary); }
+        .love-card__role { font-size: .85rem; opacity: .75; color: var(--ink); }
+        
+        /* Subtle heart badge */
+        .love-card::after {
+            content: '❤';
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 16px;
+            color: rgba(166, 43, 12, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .wall-of-love { padding: 3rem 1rem; }
+        }
+
+        /* Disable visual effects on this page */
+        html { scroll-behavior: auto !important; }
+        * { animation: none !important; transition: none !important; }
+        .bg-design { display: none !important; }
+        /* Re-enable background texture just for Wall of Love */
+        .wall-of-love { position: relative; overflow: hidden; }
+        .wall-of-love .bg-design {
+            display: block !important;
+            position: absolute;
+            left: 0; right: 0; top: -200px; bottom: -200px;
+            background: rgba(23, 48, 163, 0.2) url('designs.png');
+            background-size: 500px;
+            background-repeat: repeat;
+            background-position: center center;
+            background-blend-mode: multiply;
+            z-index: 0;
+        }
+        .wall-of-love .container { position: relative; z-index: 1; }
+        .nav-links a:hover { color: inherit !important; }
+        .btn:hover { transform: none !important; }
+        .love-card, .love-card:hover { box-shadow: none !important; transform: none !important; }
+        .fade-in,
+        .fade-in.visible,
+        .slide-in-left,
+        .slide-in-left.visible,
+        .slide-in-right,
+        .slide-in-right.visible,
+        .reveal,
+        .reveal--in { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+        /* Center CTA paragraph */
+        .cta-section .container { text-align: center; }
+        .cta-section p { text-align: center; margin-left: auto; margin-right: auto; }
+
+        /* Center Wall of Love title */
+        .wall-of-love h2 { text-align: center; margin-left: auto; margin-right: auto; }
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="logo.jpeg" alt="Eva Sheehan Logo" width="113" height="113">
+                    <span>Eva Sheehan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonials.html" aria-current="page">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn-cta-book">
+                    <img src="booknowbutton.png" alt="Book Now" class="book-now-button">
+                </a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1>Client Testimonials</h1>
+                    <p class="hero-subtitle">Hear directly from clients about their experience working with me and the results we've achieved together.</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Wall of Love -->
+        <section class="wall-of-love">
+            <div class="bg-design bg-design--accent"></div>
+            <div class="container">
+                <h2>Wall of Love</h2>
+                <div class="love-grid" id="testimonialsGrid">
+                    <!-- Testimonials will be populated by JavaScript as love cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Ready to join these satisfied clients?</h2>
+                <p>Let's discuss your project and create something amazing together.</p>
+                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer -->
+    <footer>
+        <div class="footer footer--tall">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="designphoto.jpeg" alt="Design work showcase" class="footer-brand--pin">
+                </div>
+                <nav class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eva Sheehan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Client Testimonials",
+        "description": "Client feedback and testimonials from Eva Sheehan's design and editorial projects",
+        "url": "https://evasheehan.com/testimonials",
+        "itemListElement": [
+            {
+                "@type": "Review",
+                "position": 1,
+                "reviewBody": "Eva transformed our magazine from a traditional publication into a modern, engaging experience. Her editorial design expertise and strategic thinking resulted in a 35% increase in readership.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah Chen"
+                },
+                "itemReviewed": {
+                    "@type": "Service",
+                    "name": "Editorial Design"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    
+    <script>
+        // Testimonials data
+        const testimonials = [
+            {
+                id: 1,
+                quote: "Eva transformed our magazine from a traditional publication into a modern, engaging experience. Her editorial design expertise and strategic thinking resulted in a 35% increase in readership.",
+                author: "Sarah Chen",
+                role: "Editor-in-Chief",
+                company: "Modern Living Magazine",
+                featured: true
+            },
+            {
+                id: 2,
+                quote: "Working with Eva was a game-changer for our brand. She understood our vision immediately and delivered a design system that perfectly captures our company's personality and values.",
+                author: "Michael Rodriguez",
+                role: "Marketing Director",
+                company: "TechFlow Solutions",
+                featured: true
+            },
+            {
+                id: 3,
+                quote: "Eva's attention to detail and creative vision brought our book project to life in ways we never imagined. Her publishing expertise made the entire process smooth and enjoyable.",
+                author: "Dr. Emily Watson",
+                role: "Author",
+                company: "Independent Publishing",
+                featured: true
+            },
+            {
+                id: 4,
+                quote: "The brand strategy Eva developed for us has been incredibly effective. Our customer engagement has increased significantly, and the visual identity she created is both professional and memorable.",
+                author: "Jennifer Park",
+                role: "CEO",
+                company: "GreenLeaf Organics",
+                featured: false
+            },
+            {
+                id: 5,
+                quote: "Eva's digital design work exceeded our expectations. She created an intuitive user experience that perfectly balances aesthetics with functionality, resulting in higher conversion rates.",
+                author: "David Thompson",
+                role: "Product Manager",
+                company: "InnovateTech",
+                featured: false
+            },
+            {
+                id: 6,
+                quote: "Eva's creative direction and project management skills are exceptional. She kept our complex project on track while delivering beautiful, strategic design solutions that met all our objectives.",
+                author: "Lisa Chang",
+                role: "Creative Director",
+                company: "Global Communications Inc.",
+                featured: false
+            }
+        ];
+
+        // Initialize testimonials when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialsGrid = document.getElementById('testimonialsGrid');
+            // Render all testimonials grid
+            function initialsFromName(name) {
+                if (!name) return '';
+                const parts = name.trim().split(/\s+/);
+                const first = parts[0] ? parts[0][0] : '';
+                const last = parts.length > 1 ? parts[parts.length - 1][0] : '';
+                return (first + last).toUpperCase();
+            }
+
+            function renderTestimonialsGrid() {
+                testimonialsGrid.innerHTML = testimonials.map(testimonial => `
+                    <article class="love-card">
+                        <p class="love-card__quote">${testimonial.quote}</p>
+                        <div class="love-card__footer">
+                            <span class="love-card__avatar" aria-hidden="true">${initialsFromName(testimonial.author)}</span>
+                            <span class="love-card__meta">
+                                <span class="love-card__author">${testimonial.author}</span>
+                                <span class="love-card__role">${testimonial.role}, ${testimonial.company}</span>
+                            </span>
+                        </div>
+                    </article>
+                `).join('');
+            }
+            
+            // Initialize testimonials
+            renderTestimonialsGrid();
+        });
+    </script>
+</body>
+</html>

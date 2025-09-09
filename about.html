@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Eva Sheehan - Creative Director & Strategic Designer</title>
+    <meta name="description" content="Learn about Eva Sheehan, a strategic designer and creative director with over a decade of experience in editorial design, brand strategy, and digital publishing.">
+    <meta name="author" content="Eva Sheehan">
+    <meta name="keywords" content="Eva Sheehan, creative director, strategic designer, editorial design, brand strategy, digital publishing">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Eva Sheehan - Creative Director & Strategic Designer">
+    <meta property="og:description" content="Learn about Eva Sheehan, a strategic designer and creative director with over a decade of experience in editorial design, brand strategy, and digital publishing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evasheehan.com/about">
+    <meta property="og:image" content="assets/og.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Eva Sheehan - Creative Director & Strategic Designer">
+    <meta name="twitter:description" content="Learn about Eva Sheehan, a strategic designer and creative director with over a decade of experience in editorial design, brand strategy, and digital publishing.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://evasheehan.com/about">
+    
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/services.css">
+    
+    <!-- Book Now Button Styling -->
+    <style>
+        /* Book Now Button Styling */
+        .btn-cta-book {
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 8px;
+            background: none !important;
+        }
+        
+        .book-now-button {
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s ease;
+            display: block;
+            background: none !important;
+        }
+        
+        .btn-cta-book:hover {
+            transform: translateY(-3px);
+            border-color: var(--ink);
+        }
+        
+        .btn-cta-book:hover .book-now-button {
+            filter: brightness(1.15);
+        }
+        
+        /* Header Navigation Spacing - Override External CSS */
+        .nav {
+            display: flex !important;
+            align-items: center !important;
+            gap: 2rem !important;
+            justify-content: space-between !important;
+            padding: 1.5rem 0 !important;
+        }
+        
+        .logo {
+            display: flex !important;
+            align-items: center !important;
+            gap: 1rem !important;
+            text-decoration: none !important;
+            color: var(--ink) !important;
+            font-family: var(--font-serif) !important;
+            font-size: 1.5rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .nav-links {
+            display: flex !important;
+            align-items: center !important;
+            gap: 2rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+        
+        .nav-links a {
+            text-decoration: none !important;
+            color: var(--ink) !important;
+            font-weight: 500 !important;
+            transition: color 0.3s ease !important;
+            position: relative !important;
+        }
+        
+        .nav-links a:hover {
+            color: var(--design) !important;
+        }
+        
+        /* Ensure button is prominent in header */
+        .nav .btn-cta-book {
+            margin-left: 2rem !important;
+            position: relative !important;
+            z-index: 10 !important;
+        }
+        
+        /* Responsive Layout - Ensure Content is Centered */
+        .container {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Content Sections Responsive */
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: var(--maxw);
+            margin: 0 auto;
+        }
+        
+        /* About Page Specific Layout */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 1024px) {
+            .about-layout {
+                grid-template-columns: 1fr 400px;
+                gap: 4rem;
+                align-items: start;
+            }
+        }
+        
+        .about-content-column,
+        .about-portrait-column {
+            width: 100%;
+        }
+        
+        /* Pull Quote Styling */
+        .pull-quote {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--glow);
+        }
+        
+        .pull-quote blockquote {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--ink);
+            margin: 0 0 1rem 0;
+            line-height: 1.4;
+        }
+        
+        .pull-quote cite {
+            font-size: 1rem;
+            color: var(--ink);
+            opacity: 0.8;
+        }
+        
+        /* Bio Styling */
+        .bio {
+            margin-bottom: 3rem;
+        }
+        
+        .bio p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+        
+        /* Skills Section */
+        .skills-section h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-pill {
+            background: var(--glow);
+            color: var(--ink);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Portrait Styling */
+        .portrait-container {
+            position: relative;
+            text-align: center;
+        }
+        
+        .portrait-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Values Section */
+        .values-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .values-content h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--ink);
+            margin-bottom: 3rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+            }
+        }
+        
+        .value-item {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(33, 31, 191, 0.1);
+        }
+        
+        .value-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .value-item p {
+            color: var(--ink);
+            line-height: 1.6;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .content-section {
+                padding: 3rem 1rem;
+            }
+            
+            .about-layout {
+                gap: 2rem;
+            }
+            
+            .pull-quote {
+                padding: 1.5rem;
+            }
+            
+            .pull-quote blockquote {
+                font-size: 1.3rem;
+            }
+            
+            .values-grid {
+                gap: 1.5rem;
+            }
+            
+            .value-item {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Ensure full-bleed section spans full width and centers content */
+        .full-bleed-image .container {
+            max-width: 100%;
+            padding: 0;
+        }
+        .full-bleed-image .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+            position: relative;
+        }
+        .full-bleed-image .overlay-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 1rem;
+        }
+
+        /* Disable animation effects on About page */
+        .fade-in,
+        .slide-in-left,
+        .slide-in-right {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+            animation: none !important;
+        }
+
+        /* Ensure CTA paragraph is centered at all widths */
+        .cta-section p {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="logo.jpeg" alt="Eva Sheehan Logo" width="113" height="113">
+                    <span>Eva Sheehan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn-cta-book">
+                    <img src="booknowbutton.png" alt="Book Now" class="book-now-button">
+                </a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1>About Eva Sheehan</h1>
+                    <p class="hero-subtitle">Strategic designer and creative director helping organizations communicate with clarity, purpose, and impact.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="bg-design bg-design--subtle"></div>
+            <div class="container">
+                <div class="about-layout">
+                    <!-- Left Column - Pull Quote and Bio -->
+                    <div class="about-content-column">
+                        <div class="pull-quote">
+                            <blockquote>
+                                "Good design is obvious. Great design is transparent."
+                            </blockquote>
+                            <cite>— Joe Sparano</cite>
+                        </div>
+                        
+                        <div class="bio">
+                            <p>I'm Eva Sheehan, a strategic designer and creative director with over 8 years of experience helping organizations communicate with clarity, purpose, and impact. My approach combines editorial expertise with strategic thinking to create meaningful visual experiences that connect with audiences and drive results.</p>
+                            
+                            <p>My work spans editorial design, brand identity, digital publishing, and marketing communications. I believe that great design starts with understanding—understanding your audience, your goals, and the unique story you want to tell. This foundation allows me to create solutions that are not only visually compelling but strategically sound.</p>
+                            
+                            <p>I've had the privilege of working with clients ranging from startups to established corporations, from independent authors to major publishing houses. Each project brings new challenges and opportunities to push creative boundaries while delivering measurable results.</p>
+                        </div>
+                        
+                        <!-- Skills -->
+                        <div class="skills-section">
+                            <h3>Areas of Expertise</h3>
+                            <div class="skills-grid">
+                                <span class="skill-pill">Editorial Design</span>
+                                <span class="skill-pill">Brand Strategy</span>
+                                <span class="skill-pill">Content Creation</span>
+                                <span class="skill-pill">Digital Publishing</span>
+                                <span class="skill-pill">Marketing Communications</span>
+                                <span class="skill-pill">Project Management</span>
+                                <span class="skill-pill">Creative Direction</span>
+                                <span class="skill-pill">User Experience</span>
+                                <span class="skill-pill">Print Production</span>
+                                <span class="skill-pill">Digital Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Portrait -->
+                    <div class="about-portrait-column">
+                        <div class="portrait-container">
+                            <img src="logo.jpeg" alt="Eva Sheehan - Creative Director and Designer" class="portrait-image">
+                            <div class="portrait-decoration"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full-bleed Image Section -->
+        <section class="full-bleed-image">
+            <div class="bg-design bg-design--accent"></div>
+            <div class="container">
+                <div class="image-container">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Creative Process</h3>
+                            <p>Every project is an opportunity to explore, experiment, and create something meaningful that resonates with your audience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="bg-design bg-design--subtle"></div>
+            <div class="container">
+                <div class="values-content">
+                    <h2>My Approach</h2>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <h3>Strategic Thinking</h3>
+                            <p>Every design decision is informed by strategy. I work to understand your business goals, audience needs, and competitive landscape to create solutions that drive results.</p>
+                        </div>
+                        <div class="value-item">
+                            <h3>Collaborative Process</h3>
+                            <p>Great work happens through collaboration. I work closely with clients throughout the process, ensuring your vision and feedback shape the final outcome.</p>
+                        </div>
+                        <div class="value-item">
+                            <h3>Quality Craftsmanship</h3>
+                            <p>Attention to detail matters. From typography to spacing, I ensure every element is thoughtfully considered and expertly executed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Ready to work together?</h2>
+                <p class="text-center">Let's discuss your project and explore how we can create something amazing together.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                    <a href="portfolio.html" class="btn btn-ghost">View My Work</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer -->
+    <footer>
+        <div class="footer footer--tall">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="designphoto.jpeg" alt="Design work showcase" class="footer-brand--pin">
+                </div>
+                <nav class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eva Sheehan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eva Sheehan",
+        "jobTitle": "Creative Director & Strategic Designer",
+        "description": "Strategic designer and creative director with over a decade of experience in editorial design, brand strategy, and digital publishing",
+        "url": "https://evasheehan.com/about",
+        "sameAs": [
+            "https://linkedin.com/in/evasheehan",
+            "https://twitter.com/evasheehan"
+        ],
+        "knowsAbout": [
+            "Editorial Design",
+            "Brand Strategy", 
+            "Content Creation",
+            "Digital Publishing",
+            "Marketing Communications",
+            "Project Management",
+            "Creative Direction",
+            "User Experience",
+            "Print Production",
+            "Digital Design"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Eva Sheehan Design Studio"
+        }
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/ui.js" defer></script>
+</body>
+</html>

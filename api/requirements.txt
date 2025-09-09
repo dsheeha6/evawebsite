@@ -1,0 +1,25 @@
+# FastAPI and server dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic[email]==2.5.0
+
+# Email handling
+python-multipart==0.0.6
+
+# CORS and middleware
+python-cors==0.0.1
+
+# Environment variables
+python-dotenv==1.0.0
+
+# Logging and monitoring
+structlog==23.2.0
+
+# Development and testing (optional)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
+
+# Production deployment (optional)
+gunicorn==21.2.0
