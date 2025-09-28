@@ -1,0 +1,20 @@
+# Netlify redirects file
+# This file should be placed in the root directory of your site
+
+# Handle client-side routing for single-page applications
+# If a file doesn't exist, serve index.html instead
+/*    /index.html   200
+
+# Specific redirects for common pages
+/about    /about.html    200
+/services    /services.html    200
+/portfolio    /portfolio.html    200
+/testimonials    /testimonials.html    200
+/contact    /contact.html    200
+/terms    /terms.html    200
+/privacy    /privacy.html    200
+/cookies    /cookies.html    200
+
+# Force HTTPS redirect
+http://evasheehan.com/*    https://evasheehan.com/:splat    301!
+https://www.evasheehan.com/*    https://evasheehan.com/:splat    301!

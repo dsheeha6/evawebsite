@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eva Sheehan - Editorial Design & Creative Strategy</title>
+    <meta name="description" content="Strategic designer and creative director helping organizations communicate with clarity, purpose, and impact through editorial design and brand strategy.">
+    <meta name="author" content="Eva Sheehan">
+    <meta name="keywords" content="editorial design, brand strategy, creative direction, publishing, marketing communications">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Eva Sheehan - Editorial Design & Creative Strategy">
+    <meta property="og:description" content="Strategic designer and creative director helping organizations communicate with clarity, purpose, and impact.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evasheehan.com">
+    <meta property="og:image" content="https://evasheehan.com/assets/og.jpg">
+    <meta property="og:site_name" content="Eva Sheehan Portfolio">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eva Sheehan - Editorial Design & Creative Strategy">
+    <meta name="twitter:description" content="Strategic designer and creative director helping organizations communicate with clarity, purpose, and impact.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://evasheehan.com">
+    
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Waterlily&display=swap" rel="stylesheet">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Services summary single calling card */
+        .service-card--summary { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            background-color: rgba(23, 48, 163, 0.2) !important; 
+        }
+        .services-summary-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, minmax(0, 1fr)); 
+            gap: 1.25rem; 
+        }
+        @media (max-width: 1024px) { 
+            .services-summary-grid { 
+                grid-template-columns: repeat(2, minmax(0, 1fr)); 
+            } 
+        }
+        @media (max-width: 640px) { 
+            .services-summary-grid { 
+                grid-template-columns: 1fr; 
+            } 
+        }
+        .service-summary { 
+            display: flex; 
+            gap: .75rem; 
+            align-items: flex-start; 
+        }
+        .service-summary .service-icon { 
+            width: 56px; 
+            height: 56px; 
+            border-radius: 50%; 
+            background: rgba(255,255,255,0.9); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .service-summary .service-icon img { 
+            width: 32px; 
+            height: 32px; 
+        }
+        .service-summary h4 { 
+            margin: 0 0 .25rem 0; 
+            font-size: 1.1rem; 
+            color: var(--ink); 
+        }
+        .service-summary p { 
+            margin: 0; 
+            font-size: .95rem; 
+            opacity: .9; 
+            line-height: 1.5; 
+        }
+        
+        /* Hero Section Background */
+        .hero {
+            background: var(--canvas) url('designs.png') !important;
+            background-size: 500px !important;
+            background-repeat: repeat !important;
+            background-position: center center !important;
+            background-blend-mode: multiply !important;
+        }
+        
+        /* Testimonials Carousel Styling */
+        .testimonials-preview {
+            padding: 4rem 0 !important;
+            background: var(--canvas) url('designs.png') !important;
+            background-size: 500px !important;
+            background-repeat: repeat !important;
+            background-position: center center !important;
+            background-blend-mode: multiply !important;
+        }
+        
+        .testimonials-preview h2 {
+            text-align: center !important;
+            font-family: 'Fraunces', serif !important;
+            font-size: 2.5rem !important;
+            color: var(--primary) !important;
+            margin-bottom: 3rem !important;
+            -webkit-text-stroke: 0.4px var(--ink) !important;
+            text-shadow:
+                -0.5px 0 0 var(--ink),
+                 0.5px 0 0 var(--ink),
+                 0 -0.5px 0 var(--ink),
+                 0 0.5px 0 var(--ink) !important;
+        }
+        
+        .testimonial-carousel {
+            position: relative !important;
+            max-width: 800px !important;
+            margin: 2rem auto !important;
+            overflow: hidden !important;
+            border-radius: 12px !important;
+            min-height: 300px !important;
+            background: transparent !important;
+        }
+        
+        /* OLD non-JS view (kept for noscript) */
+        .testimonial-carousel .testimonial-slide { display: none; }
+        .testimonial-carousel .testimonial-slide.active { display: block; }
+        
+        /* NEW JS card must be visible; never use :not(.active) on generic children */
+        .testimonial-card { display: block; position: relative; z-index: 1; }
+        .testimonial-card blockquote { margin: 0 0 .75rem; font-size: 1.125rem; line-height: 1.6; }
+        .testimonial-author strong { display: block; }
+        
+        /* dots */
+        .carousel-nav { display: flex; justify-content: center; margin-top: 1rem; }
+        .carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: #d9d9d9; margin: 0 5px; cursor: pointer; }
+        .carousel-dot.active { background: #163B60; }
+        
+        /* Fallback: Show first testimonial if JavaScript fails */
+        .testimonial-carousel:not(.js-enabled) .testimonial-slide:first-child {
+            display: block !important;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-slide blockquote,
+        .testimonial-card blockquote {
+            font-size: 1.2rem !important;
+            line-height: 1.6 !important;
+            color: var(--primary) !important;
+            margin: 0 0 2rem 0 !important;
+            font-style: italic !important;
+            position: relative !important;
+            -webkit-text-stroke: 0.35px var(--ink) !important;
+            text-shadow:
+                -0.5px 0 0 var(--ink),
+                 0.5px 0 0 var(--ink),
+                 0 -0.5px 0 var(--ink),
+                 0 0.5px 0 var(--ink) !important;
+        }
+        
+        .testimonial-slide blockquote::before,
+        .testimonial-card blockquote::before {
+            content: '"' !important;
+            font-size: 4rem !important;
+            color: var(--primary) !important;
+            position: absolute !important;
+            top: -20px !important;
+            left: -20px !important;
+            font-family: 'Fraunces', serif !important;
+        }
+        
+        .testimonial-author {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+        }
+        
+        .testimonial-author strong {
+            color: var(--primary) !important;
+            font-weight: 600 !important;
+            font-size: 1.1rem !important;
+            -webkit-text-stroke: 0.3px var(--ink) !important;
+            text-shadow:
+                -0.5px 0 0 var(--ink),
+                 0.5px 0 0 var(--ink),
+                 0 -0.5px 0 var(--ink),
+                 0 0.5px 0 var(--ink) !important;
+        }
+        
+        .testimonial-author span {
+            color: var(--primary) !important;
+            opacity: 0.95 !important;
+            font-size: 1rem !important;
+            -webkit-text-stroke: 0.25px var(--ink) !important;
+            text-shadow:
+                -0.5px 0 0 var(--ink),
+                 0.5px 0 0 var(--ink),
+                 0 -0.5px 0 var(--ink),
+                 0 0.5px 0 var(--ink) !important;
+        }
+        
+        /* Carousel Navigation */
+        .carousel-nav {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin-top: 2rem !important;
+        }
+        
+        .carousel-dots {
+            display: flex !important;
+            gap: 0.5rem !important;
+        }
+        
+        .carousel-dot {
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            background: rgba(0, 0, 0, 0.3) !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .carousel-dot.active {
+            background: var(--design) !important;
+            transform: scale(1.2) !important;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .testimonial-slide {
+                padding: 2rem 1.5rem !important;
+            }
+            
+            .testimonial-slide blockquote {
+                font-size: 1.1rem !important;
+            }
+        }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="logo.jpeg" as="image">
+    
+    <!-- Font preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/services.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="logo.jpeg" alt="Eva Sheehan Logo" width="113" height="113">
+                    <span>Eva Sheehan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn-cta-book">
+                    <img src="booknowbutton.png" alt="Book Now" class="book-now-button">
+                </a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        
+    </header>
+
+    <!-- Featured / As Seen In Strip -->
+    <section role="region" aria-label="Featured publications where this work has appeared" class="featured-strip">
+        <div class="container featured-strip__inner">
+            <div class="featured-label" aria-hidden="true">AS SEEN IN</div>
+            <div class="marquee" tabindex="0">
+                <div class="marquee__track">
+                    <!-- primary set -->
+                    <span class="chip" aria-label="Timberline Review: “Deserted Dreams From My Bedroom”">
+                        <span class="chip__pub">Timberline Review</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“Deserted Dreams From My Bedroom”</span>
+                    </span>
+                    <span class="chip" aria-label="Pathos Literary Journal: “Summertime Bliss”">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“Summertime Bliss”</span>
+                    </span>
+                    <span class="chip" aria-label="Pathos Literary Journal: “Being Thirteen”">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“Being Thirteen”</span>
+                    </span>
+                    <span class="chip" aria-label="Pathos Literary Journal: “Sweet Words”">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“Sweet Words”</span>
+                    </span>
+                    <span class="chip" aria-label="Pathos Literary Journal: “A Quiet Love”">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“A Quiet Love”</span>
+                    </span>
+                    <span class="chip" aria-label="The Peacock’s Feet Literary Journal: “Birthright”">
+                        <span class="chip__pub">The Peacock’s Feet Literary Journal</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“Birthright”</span>
+                    </span>
+                    <span class="chip" aria-label="The Peacock’s Feet Literary Journal: “Waiting for Courage”">
+                        <span class="chip__pub">The Peacock’s Feet Literary Journal</span>
+                        <span class="chip__dot" aria-hidden="true">•</span>
+                        <span class="chip__work">“Waiting for Courage”</span>
+                    </span>
+
+                    <!-- duplicate set for seamless loop -->
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">Timberline Review</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“Deserted Dreams From My Bedroom”</span>
+                    </span>
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“Summertime Bliss”</span>
+                    </span>
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“Being Thirteen”</span>
+                    </span>
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“Sweet Words”</span>
+                    </span>
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">Pathos Literary Journal</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“A Quiet Love”</span>
+                    </span>
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">The Peacock’s Feet Literary Journal</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“Birthright”</span>
+                    </span>
+                    <span class="chip dup" aria-hidden="true">
+                        <span class="chip__pub">The Peacock’s Feet Literary Journal</span>
+                        <span class="chip__dot">•</span>
+                        <span class="chip__work">“Waiting for Courage”</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section">
+            <div class="hero-parallax" aria-hidden="true"></div>
+            <div class="container container--hero">
+                <div class="hero-content stack stack--lg">
+                    <h1>Eva Sheehan</h1>
+                    <p class="hero-subtitle">Editorial designer & creative director crafting meaningful visual stories that connect brands with their audiences.</p>
+                    <div class="hero-buttons flex flex--center">
+                        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                        <a href="portfolio.html" class="btn btn-ghost">Explore My Work</a>
+                    </div>
+                </div>
+            </div>
+            <div class="wave wave--ink" aria-hidden="true">
+                <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,80 L0,80 Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </section>
+        
+
+
+        <!-- Services Preview -->
+        <section id="services" class="section-services section">
+          <div class="container">
+            <a href="services.html" class="link-unstyled"><h2 class="services-title">MY SERVICES</h2></a>
+
+            <a href="services.html" class="link-unstyled">
+              <div class="service-card service-card--summary service-card--1">
+                <div class="service-card-content">
+                  <div class="services-summary-grid grid grid--3">
+                  <div class="service-summary stack stack--sm">
+                    <div class="service-icon"><img src="assets/icons/pencil.png" alt="Editorial Design"></div>
+                    <div>
+                      <h4>Editorial Design</h4>
+                      <p>Magazines, reports, and publications designed to engage and inform.</p>
+                    </div>
+                  </div>
+                  <div class="service-summary stack stack--sm">
+                    <div class="service-icon"><img src="assets/icons/pen.png" alt="Brand Strategy"></div>
+                    <div>
+                      <h4>Brand Strategy</h4>
+                      <p>Clear positioning and identity systems that align every touchpoint.</p>
+                    </div>
+                  </div>
+                  <div class="service-summary stack stack--sm">
+                    <div class="service-icon"><img src="assets/icons/calligraphypen.png" alt="Content Creation"></div>
+                    <div>
+                      <h4>Content Creation</h4>
+                      <p>On-brand copy for web, print, and email that drives action.</p>
+                    </div>
+                  </div>
+                  <div class="service-summary stack stack--sm">
+                    <div class="service-icon"><img src="assets/icons/plant.png" alt="Digital Publishing"></div>
+                    <div>
+                      <h4>Digital Publishing</h4>
+                      <p>From layout to distribution—formats, platforms, and analytics.</p>
+                    </div>
+                  </div>
+                  <div class="service-summary stack stack--sm">
+                    <div class="service-icon"><img src="assets/icons/typewriter.png" alt="Marketing Communications"></div>
+                    <div>
+                      <h4>Marketing Communications</h4>
+                      <p>Campaigns and collateral that connect with your audience.</p>
+                    </div>
+                  </div>
+                  <div class="service-summary stack stack--sm">
+                    <div class="service-icon"><img src="assets/icons/book.svg" alt="Print & Digital Design"></div>
+                    <div>
+                      <h4>Print & Digital Design</h4>
+                      <p>Production-ready assets across print and digital channels.</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="wave wave--cta" aria-hidden="true">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0,48 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,80 L0,80 Z" fill="currentColor"/>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Selected Projects -->
+        <section class="selected-projects section">
+            <div class="bg-design bg-design--subtle"></div>
+            <div class="container">
+                <h2>Selected Work</h2>
+                <div class="project-grid grid grid--3" id="projectGrid">
+                    <!-- Placeholder projects -->
+                    <article class="project-card">
+                        <img src="designphoto.jpeg" alt="Placeholder project 1">
+                        <div class="project-overlay">
+                            <h3>Editorial Layout</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Print</span>
+                                <span class="project-tag">Typography</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="designphoto.jpeg" alt="Placeholder project 2">
+                        <div class="project-overlay">
+                            <h3>Brand System</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Identity</span>
+                                <span class="project-tag">Guidelines</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="designphoto.jpeg" alt="Placeholder project 3">
+                        <div class="project-overlay">
+                            <h3>Digital Publication</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">UX</span>
+                                <span class="project-tag">Web</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="wave wave--red" aria-hidden="true">
+                <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,80 L0,80 Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Testimonials Preview -->
+        <section class="testimonials-preview section">
+            <div class="testimonials-parallax" aria-hidden="true"></div>
+            <div class="container">
+                <h2>What Clients Say</h2>
+                <div class="testimonial-carousel" id="testimonialCarousel">
+                    <div class="testimonial-slide active">
+                        <blockquote>
+                            "Eva transformed our magazine from a traditional publication into a modern, engaging experience. Her editorial design expertise and strategic thinking resulted in a 35% increase in readership."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Sarah Chen</strong>
+                            <span>Editor-in-Chief, Modern Living Magazine</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            "Working with Eva was a game-changer for our brand. She understood our vision immediately and delivered a design system that perfectly captures our company's personality and values."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Michael Rodriguez</strong>
+                            <span>Marketing Director, TechFlow Solutions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            "Eva's attention to detail and creative vision brought our book project to life in ways we never imagined. Her publishing expertise made the entire process smooth and enjoyable."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Dr. Emily Watson</strong>
+                            <span>Author, Independent Publishing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            "Eva's digital design work exceeded our expectations. She created an intuitive user experience that perfectly balances aesthetics with functionality, resulting in higher conversion rates."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>David Thompson</strong>
+                            <span>Product Manager, InnovateTech</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            "Eva's creative direction and project management skills are exceptional. She kept our complex project on track while delivering beautiful, strategic design solutions that met all our objectives."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Lisa Chang</strong>
+                            <span>Creative Director, Global Communications Inc.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            "The brand strategy Eva developed for us was transformative. Her deep understanding of our market and audience helped us connect with customers in meaningful ways we hadn't achieved before."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Jennifer Park</strong>
+                            <span>CEO, Sustainable Future Co.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+            </div>
+            <div class="wave wave--primary" aria-hidden="true">
+                <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,80 L0,80 Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- CTA Strip -->
+        <section class="cta-strip section">
+            <div class="bg-design bg-design--accent"></div>
+            <div class="container">
+                <div class="stack stack--lg">
+                    <h2>Ready to bring your vision to life?</h2>
+                    <p>Let's collaborate to create compelling visual stories that resonate with your audience and achieve your goals.</p>
+                    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                </div>
+            </div>
+            <div class="wave wave--canvas" aria-hidden="true">
+                <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,80 L0,80 Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer footer--tall">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="designphoto.jpeg" alt="Design work showcase" class="footer-brand--pin">
+                </div>
+                <nav class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com/in/evasheehan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/evasheehan" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Eva Sheehan. All rights reserved.</p>
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Eva Sheehan Portfolio",
+        "url": "https://evasheehan.com",
+        "description": "Strategic designer and creative director helping organizations communicate with clarity, purpose, and impact.",
+        "author": {
+            "@type": "Person",
+            "name": "Eva Sheehan",
+            "jobTitle": "Creative Director & Strategic Designer",
+            "description": "Editorial design and brand strategy expert"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eva Sheehan Design Studio"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://evasheehan.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    
+    <!-- Testimonials Carousel Script -->
+    <script>
+    (function () {
+      'use strict';
+
+      // Avoid double init across partials/HMR
+      if (window.__testimonialsInit) return;
+      window.__testimonialsInit = true;
+
+      const INTERVAL = 3000;
+      let idx = 0, timer;
+
+      const qs  = (s, r=document) => r.querySelector(s);
+      const qsa = (s, r=document) => Array.from(r.querySelectorAll(s));
+
+      function init() {
+        const wrap = qs('#testimonialCarousel');
+        const dotsWrap = qs('#carouselDots');
+        if (!wrap || !dotsWrap) return;
+
+        // 1) Gather slide content from existing markup
+        const raw = qsa('.testimonial-slide', wrap);
+        const data = raw.map(s => ({
+          quote:  (qs('blockquote', s) || {}).innerHTML || '',
+          author: (qs('.testimonial-author strong', s) || {}).textContent || '',
+          title:  (qs('.testimonial-author span', s) || {}).textContent || ''
+        }));
+        if (!data.length) return;
+
+        // 2) Replace with a single render target
+        wrap.innerHTML = '<div class="testimonial-card" aria-live="polite"></div>';
+        const card = qs('.testimonial-card', wrap);
+
+        // 3) Build dots
+        dotsWrap.innerHTML = '';
+        const dots = data.map((_, i) => {
+          const d = document.createElement('div');
+          d.className = 'carousel-dot' + (i===0 ? ' active' : '');
+          d.addEventListener('click', () => go(i));
+          dotsWrap.appendChild(d);
+          return d;
+        });
+
+        function render(i){
+          const t = data[i];
+          card.innerHTML = `
+            <blockquote>${t.quote}</blockquote>
+            <div class="testimonial-author">
+              <strong>${t.author}</strong>
+              <span>${t.title}</span>
+            </div>`;
+          dots.forEach((d,j)=>d.classList.toggle('active', j===i));
+          idx = i;
+        }
+        function next(){ render((idx+1)%data.length); }
+        function prev(){ render((idx-1+data.length)%data.length); }
+        function go(i){ render(i); restart(); }
+        function restart(){ clearInterval(timer); timer = setInterval(next, INTERVAL); }
+
+        render(0);
+        restart();
+
+        // Pause on hover
+        wrap.addEventListener('mouseenter', ()=>clearInterval(timer));
+        wrap.addEventListener('mouseleave', restart);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') { next(); restart(); }
+          if (e.key === 'ArrowLeft') { prev(); restart(); }
+        });
+
+        // Debug (keep)
+        console.log('[Testimonials] slides:', data.length);
+      }
+
+      // Unique IDs check to avoid collisions
+      (function ensureUniqueIDs(){
+        const ids = ['testimonialCarousel','carouselDots'];
+        ids.forEach(id => {
+          const nodes = qsa('#'+id);
+          if (nodes.length > 1) {
+            nodes.forEach((n,i)=>{ if(i>0) n.id = id + '-' + i; });
+            console.warn('Duplicate id fixed:', id);
+          }
+        });
+      })();
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else { init(); }
+    })();
+    </script>
+</body>
+</html>
